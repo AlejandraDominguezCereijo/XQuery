@@ -36,7 +36,6 @@ order by $x/titulo
 return ($x/titulo, count($x/autores/autor))
 
 
-
 6- Libros cuyo autor es “Axel”.
 
 for $x in doc("libros.xml")/libros/libro
@@ -44,9 +43,8 @@ where $x/autores/autor/nombre = 'Axel'
 order by $x/titulo
 return ($x/titulo, $x/autores/autor)
 
-
-
 7- Mostrar título y precio en una lista HTML.
+
 for $x in doc("libros.xml")/libros/libro
 order by $x/titulo
 return 
@@ -55,9 +53,8 @@ return
 <li>{$x/precio}</li>
 </ul>
 
-
-
 8- Mostrar: título, isbn y precio en una tabla HTML
+
 for $x in doc("libros.xml")/libros/libro
 order by $x/titulo
 return 
@@ -67,18 +64,17 @@ return
 <li>{$x/precio}</li>
 </ul>
 
-
 Con el fichero "alumnos.xml"
 
 1- Mostrar el nombre de los alumnos aprobados.
+
 for $x in doc("alumnos.xml")//alumnos/alumno
 where $x/nota >4
 order by $x/nota
 return ($x/nota,$x/nombre)
 
-
-
 2- Mostrar el DNI y la nota de los alumnos que han aprobado.
+
 for $x in doc("alumnos.xml")//alumnos/alumno
 where $x/nota >4
 order by $x/nota
@@ -91,13 +87,11 @@ where $x/nota >=6 and $x/nota <=8
 order by $x/nota
 return ($x/nota,$x/nombre)
 
-
 4- Mostrar listado de nombres ordenados por apellidos.
 
 for $x in doc("alumnos.xml")//alumnos/alumno
 order by $x/apells
 return ($x/nombre,$x/apells)
-
 
 5- Mostrar nombres ordenados por DNI.
 
