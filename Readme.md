@@ -45,24 +45,28 @@ return ($x/titulo, $x/autores/autor)
 
 7- Mostrar título y precio en una lista HTML.
 
+```
 for $x in doc("libros.xml")/libros/libro
 order by $x/titulo
 return 
-```<ul>
+<ul>
 <li>{$x/titulo}</li> 
 <li>{$x/precio}</li>
-</ul>```
+</ul>
+```
 
 8- Mostrar: título, isbn y precio en una tabla HTML
 
-```for $x in doc("libros.xml")/libros/libro
+```
+for $x in doc("libros.xml")/libros/libro
 order by $x/titulo
 return 
 <ul>
 <li>{$x/titulo}</li> 
 <li>{$x/isbn}</li> 
 <li>{$x/precio}</li>
-</ul>```
+</ul>
+```
 
 Con el fichero "alumnos.xml"
 
